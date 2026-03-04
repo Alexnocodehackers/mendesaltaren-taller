@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-blue: #0D3FF5;
+  --color-blue-hover: #0a33c7;
+  --color-surface: #F5F5F7;
+  --color-heading: #111111;
+  --color-body: #333333;
+  --color-muted: #888888;
+  --font-sans: var(--font-montserrat);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-body);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Allow Tailwind text-color utilities to override on dark sections */
+.hero-dark h1,
+.hero-dark p {
+  color: inherit;
 }
